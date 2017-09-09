@@ -1,0 +1,24 @@
+<div class="component">
+  <table id="target-table">
+    <thead>
+      <tr>
+        <!-- <th>(dropdown menu1)</th>          
+        <th>(dropdown menu2)</th>           -->
+        <th *ngFor="let target of targets">
+          <app-select-language-dropdown></app-select-language-dropdown>
+          <button (click)="removeColumn(target)">x</button></th>
+        <th><button (click)="addNewColumn()">New column</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>              
+        <!-- <td>(search bar)</td>
+        <td>(search bar)</td>         -->
+        <td *ngFor="let target of targets">(search bar)</td>        
+      </tr>
+      <!-- <tr>
+        <td *ngFor="let target of targets" class="search-column main-language phrase-equivalent-id-1">{{target.phrase}}</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div><!-- /container -->
