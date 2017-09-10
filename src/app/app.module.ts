@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MainTableComponent } from './main-table/main-table.component';
-import { TargetColumnComponent } from './target-column/target-column.component';
+import { TargetLanguageColumnComponent } from './target-language-column/target-language-column.component';
 import { SelectLanguageDropdownComponent } from './select-language-dropdown/select-language-dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainTableComponent,
-    TargetColumnComponent,
+    TargetLanguageColumnComponent,
     SelectLanguageDropdownComponent
   ],
   imports: [
