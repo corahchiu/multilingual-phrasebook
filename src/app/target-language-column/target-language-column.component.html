@@ -2,26 +2,25 @@
   <table id="target-language-column">
     <thead>
       <tr>
-        <!-- <th>(dropdown menu1)</th>          
-        <th>(dropdown menu2)</th>           -->
-        <th *ngFor="let targetLanguage of targetLanguages">
+        <th *ngFor="let targetLanguageColumn of targetLanguageColumns">
           <app-select-language-dropdown></app-select-language-dropdown>
-          <button (click)="moveColumnLeft(targetLanguage)">left</button>
-          <button (click)="moveColumnRight(targetLanguage)">right</button>          
-          <button (click)="removeColumn(targetLanguage)">x</button></th>
+          <button (click)="moveColumnLeft(targetLanguageColumn)">left</button>
+          <button (click)="moveColumnRight(targetLanguageColumn)">right</button>          
+          <button (click)="removeColumn(targetLanguageColumn)">x</button></th>
         <th><button (click)="addNewColumn()" id="add">New column</button></th>
       </tr>
     </thead>
     <tbody>
-      <tr>              
-        <!-- <td>(search bar)</td>
-        <td>(search bar)</td>         -->
-        <td *ngFor="let targetLanguage of targetLanguages">(search)</td>
-        <!-- <td><input placeholder="Search word/phrase" [(ngModel)]="searchedPhrase" *ngFor="let targetLanguage of targetLanguages">{{targetLanguage.text}}</input></td> -->
+      <tr>
+        <td *ngFor="let targetLanguageColumn of targetLanguageColumns">
+          <input type="text" name="search" placeholder="Search word/phrase">
+          <button (click)="search()">search</button>
+        </td>
+        <!-- [(ngModel)]="searchedPhrase" >{{targetLanguageColumn.text}} -->
       </tr>
       <!-- <tr>
-        <td *ngFor="let targetLanguage of targetLanguages" class="search-column main-language phrase-equivalent-id-1">{{targetLanguage.phrase}}</td>
+        <td *ngFor="let targetLanguageColumn of targetLanguageColumns" class="search-column main-language phrase-equivalent-id-1">{{targetLanguageColumn.phrase}}</td>
       </tr> -->
     </tbody>
   </table>
-</div><!-- /container -->
+</div>

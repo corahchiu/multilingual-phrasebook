@@ -13,35 +13,43 @@ import { SelectLanguageDropdownComponent } from '../select-language-dropdown/sel
 
 export class TargetLanguageColumnComponent implements OnInit {
 
-  targetLanguages: Array<TargetLanguageColumn> = [];
-
-  constructor() { }
-
-  ngOnInit() {
+  targetLanguageColumns: Array<TargetLanguageColumn> = [];
+  
+  constructor() {
+    this.targetLanguageColumns.push(new TargetLanguageColumn());
+    this.targetLanguageColumns.push(new TargetLanguageColumn());
   }
 
+  ngOnInit() { }
+
   addNewColumn(): void {
-    this.targetLanguages.push(new TargetLanguageColumn());
+    this.targetLanguageColumns.push(new TargetLanguageColumn());
   }
 
   removeColumn(column): void {
-    this.targetLanguages.splice(this.targetLanguages.indexOf(column), 1);
+    if (this.targetLanguageColumns.length > 2) {
+      this.targetLanguageColumns.splice(this.targetLanguageColumns.indexOf(column), 1);
+    }
   }
 
   moveColumnLeft(column): void {
-    const i: number = this.targetLanguages.indexOf(column);
+    const i: number = this.targetLanguageColumns.indexOf(column);
     if (i > 0) {
-      this.targetLanguages[i] = this.targetLanguages[i - 1];
-      this.targetLanguages[i - 1] = column;
+      this.targetLanguageColumns[i] = this.targetLanguageColumns[i - 1];
+      this.targetLanguageColumns[i - 1] = column;
      }
   }
 
   moveColumnRight(column): void {
-    const i: number = this.targetLanguages.indexOf(column);
-    if (i < this.targetLanguages.length - 1) {
-      this.targetLanguages[i] = this.targetLanguages[i + 1];
-      this.targetLanguages[i + 1] = column;
+    const i: number = this.targetLanguageColumns.indexOf(column);
+    if (i < this.targetLanguageColumns.length - 1) {
+      this.targetLanguageColumns[i] = this.targetLanguageColumns[i + 1];
+      this.targetLanguageColumns[i + 1] = column;
      }
+  }
+
+  search(): void {
+    // todo
   }
 
 }
