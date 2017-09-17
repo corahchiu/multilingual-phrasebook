@@ -12,19 +12,20 @@ import { MainLanguageColumnComponent } from './main-language-column/main-languag
 
 // Service
 import { MainLanguageColumnService } from './main-language-column.service'; //from tutorial
+import { LanguagesService } from './languages.service';
 
 //from tutorial
-const ROUTES = [
-  {
-    path: '',
-    redirectTo: '/posts',
-    pathMatch: 'full'
-  },
-  {
-    path: 'posts',
-    component: MainLanguageColumnComponent
-  }
-];
+// const ROUTES = [
+//   {
+//     path: '',
+//     redirectTo: '/posts',
+//     pathMatch: 'full'
+//   },
+//   {
+//     path: 'posts',
+//     component: MainLanguageColumnComponent
+//   }
+// ];
 
 @NgModule({
   declarations: [
@@ -37,10 +38,10 @@ const ROUTES = [
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    RouterModule.forRoot(ROUTES) //from tutorial
+    HttpModule
+    // RouterModule.forRoot(ROUTES) //from tutorial
   ],
-  providers: [MainLanguageColumnService], //from tutorial
+  providers: [MainLanguageColumnService, LanguagesService], //from tutorial
   bootstrap: [AppComponent]
 })
 export class AppModule { }

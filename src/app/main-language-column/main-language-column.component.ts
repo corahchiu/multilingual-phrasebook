@@ -8,23 +8,23 @@ import { MainLanguageColumnService } from '../main-language-column.service'; //f
 })
 export class MainLanguageColumnComponent implements OnInit {
 
-  phrases: Array<phrase> = [];
+  // phrases: Array<phrase> = [];
   
   constructor(private phrasesService: MainLanguageColumnService) { }
   
   ngOnInit() {
       // Retrieve posts from the API
-      // this.postsService.getAllPosts().subscribe(posts => {
-      //   this.posts = posts;
-      // });
+      // this.phrasesService.getAllPosts().subscribe(posts => {
+        // this.posts = posts;
+      };
   }
 
-  chooseLanguage(){
+  // chooseLanguage(){
 
-  }
+  // }
 
-  searchPhrase(){
+  // searchPhrase(){
     
-  }
+  // }
 
 }

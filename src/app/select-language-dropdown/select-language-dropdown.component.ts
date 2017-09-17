@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguagesService } from '../languages.service';
 
 @Component({
   selector: 'app-select-language-dropdown',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectLanguageDropdownComponent implements OnInit {
 
-  constructor() { }
-
+  // languages: Array<language> = [];
+  languages: any = [];
+  
+  constructor(private languagesService: LanguagesService) { }
+  
   ngOnInit() {
-  }
+      // Retrieve posts from the API
+      this.languagesService.getAllLanguages().subscribe(languages => {
+        this.languages = languages;
+  });
 
 }
