@@ -5,32 +5,16 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'; //from tutorial
 
 import { AppComponent } from './app.component';
-import { MainTableComponent } from './main-table/main-table.component';
 import { TargetLanguageColumnComponent } from './target-language-column/target-language-column.component';
 import { SelectLanguageDropdownComponent } from './select-language-dropdown/select-language-dropdown.component';
 import { MainLanguageColumnComponent } from './main-language-column/main-language-column.component';
 
-// Service
-import { MainLanguageColumnService } from './main-language-column.service'; //from tutorial
 import { LanguagesService } from './languages.service';
 
-//from tutorial
-// const ROUTES = [
-//   {
-//     path: '',
-//     redirectTo: '/posts',
-//     pathMatch: 'full'
-//   },
-//   {
-//     path: 'posts',
-//     component: MainLanguageColumnComponent
-//   }
-// ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainTableComponent,
     TargetLanguageColumnComponent,
     SelectLanguageDropdownComponent,
     MainLanguageColumnComponent
@@ -39,9 +23,8 @@ import { LanguagesService } from './languages.service';
     BrowserModule,
     FormsModule,
     HttpModule
-    // RouterModule.forRoot(ROUTES) //from tutorial
   ],
-  providers: [MainLanguageColumnService, LanguagesService], //from tutorial
+  providers: [LanguagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

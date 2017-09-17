@@ -1,27 +1,11 @@
-<!-- <div class="container">
-  <div class="row" *ngFor="let post of posts">
-    <div class="card card-block">
-      <h4 class="card-title">{{ post.title }}</h4>
-      <p class="card-text">{{post.body}}</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
-</div> -->
-
 <div class="component">
-  <table id="main-language-column">
+  <table id="main-language-column">    
     <thead>
-      <!-- language -->
-      <tr *ngIf=""> 
-        <!-- <th *ngFor="let targetLanguageColumn of targetLanguageColumns"> -->
+      <th>
+        <tr>
           <app-select-language-dropdown></app-select-language-dropdown>
-          
-          <!-- <button (click)="moveColumnLeft(targetLanguageColumn)">left</button>
-          <button (click)="moveColumnRight(targetLanguageColumn)">right</button>          
-          <button (click)="removeColumn(targetLanguageColumn)">x</button></th>
-        <th><button (click)="addNewColumn()" id="add">New column</button></th> -->
-      </tr>
+        </tr>
+      </th>
     </thead>
     <tbody>
       <tr>
@@ -29,14 +13,17 @@
           <input type="text" name="search" placeholder="Search word/phrase">
           <button (click)="searchPhrase()">search</button>
         </td>
-        <td *ngFor="let phrase of phrases">
-            
-        </td>
-        <!-- [(ngModel)]="searchedPhrase" >{{targetLanguageColumn.text}} -->
       </tr>
-      <!-- <tr>
-        <td *ngFor="let targetLanguageColumn of targetLanguageColumns" class="search-column main-language phrase-equivalent-id-1">{{targetLanguageColumn.phrase}}</td>
-      </tr> -->
+      <tr>
+        <td>Hi</td>
+      </tr>
+      <tr>
+        <!-- display synonyms -->
+        <td *ngFor="let phrase of phrases">
+          {{phrase.synonym}}
+        </td>
+      </tr>
+
     </tbody>
   </table>
 </div>

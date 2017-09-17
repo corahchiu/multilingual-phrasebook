@@ -8,7 +8,7 @@ import { LanguagesService } from '../languages.service';
 })
 export class SelectLanguageDropdownComponent implements OnInit {
 
-  // languages: Array<language> = [];
+  // languages: Array<Language> = [];
   languages: any = [];
   
   constructor(private languagesService: LanguagesService) { }
@@ -19,4 +19,5 @@ export class SelectLanguageDropdownComponent implements OnInit {
         this.languages = languages;
   });
 
+  }
 }

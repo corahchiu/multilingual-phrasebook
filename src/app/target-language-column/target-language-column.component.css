@@ -1,9 +1,9 @@
 .component {
     overflow: scroll;
 	line-height: 1.5em;
-    margin: auto;
-	padding: 2em 0 3em;
-    max-width: 95%;
+    margin: 0px 10px 0px 0px;
+	/* padding: 2em 0 3em; */
+    max-width: 70%;
 }
 .component .filler {
 	font-family: Arial, sans-serif;
@@ -11,8 +11,8 @@
 }
 table {
     border-collapse: collapse;
-    margin-bottom: 3em;
-    width: 100%;
+    /* margin-bottom: 3em; */
+    /* width: 100%; */
     background: #fff;
 }
 td, th {

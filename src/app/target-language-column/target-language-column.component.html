@@ -12,15 +12,8 @@
     </thead>
     <tbody>
       <tr>
-        <td *ngFor="let targetLanguageColumn of targetLanguageColumns">
-          <input type="text" name="search" placeholder="Search word/phrase">
-          <button (click)="search()">search</button>
-        </td>
-        <!-- [(ngModel)]="searchedPhrase" >{{targetLanguageColumn.text}} -->
+        <!-- display array of translated phrases -->
       </tr>
-      <!-- <tr>
-        <td *ngFor="let targetLanguageColumn of targetLanguageColumns" class="search-column main-language phrase-equivalent-id-1">{{targetLanguageColumn.phrase}}</td>
-      </tr> -->
     </tbody>
   </table>
 </div>
