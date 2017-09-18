@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-main-language-column',
@@ -7,20 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainLanguageColumnComponent implements OnInit {
 
+  language = '';
+  phrase = '';
+  searchedPhrase = '';
   // phrases: Array<phrase> = [];
+  // @Input()
+  // searchedPhrase: EventEmitter<string> = new EventEmitter<string>();
   
-  constructor() { }
+  constructor(private searchService: SearchService) { } 
   
   ngOnInit() {
       
-    };
   }
 
-  // chooseLanguage(){
+  selectLanguage(language) {
+    this.language = language;
+  }
 
-  // }
-
-  // searchPhrase(){
+  searchPhrase(){
+    console.log(this.phrase);
+    var obj = {language: this.language, phrase: this.phrase};
     
-  // }
-
+    this.searchService.searchPhrase(obj).subscribe(phrase => {
+      this.searchedPhrase = phrase.json().properties.phrase;
+      
+    })
+  }
+}

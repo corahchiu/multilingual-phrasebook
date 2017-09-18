@@ -10,7 +10,7 @@ import { SelectLanguageDropdownComponent } from './select-language-dropdown/sele
 import { MainLanguageColumnComponent } from './main-language-column/main-language-column.component';
 
 import { LanguagesService } from './languages.service';
-
+import { SearchService } from './search.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { LanguagesService } from './languages.service';
     FormsModule,
     HttpModule
   ],
-  providers: [LanguagesService],
+  providers: [LanguagesService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,13 +3,12 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class LanguagesService {
+export class SearchService {
 
   constructor(private http: Http) { }
-
-  getAllLanguages() {
-    return this.http.get('http://localhost:3000')
-      .map(res => res.json());
-  }
+  
+    searchPhrase(obj: object) {
+      return this.http.post('http://localhost:3000/search', obj)
+    }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { LanguagesService } from '../languages.service';
 
 @Component({
@@ -8,16 +8,22 @@ import { LanguagesService } from '../languages.service';
 })
 export class SelectLanguageDropdownComponent implements OnInit {
 
-  // languages: Array<Language> = [];
-  languages: any = [];
+  languages: Array<any> = [];
+
+  @Output() 
+  selectedLanguage: EventEmitter<string> = new EventEmitter<string>();
   
   constructor(private languagesService: LanguagesService) { }
   
   ngOnInit() {
-      // Retrieve posts from the API
-      this.languagesService.getAllLanguages().subscribe(languages => {
-        this.languages = languages;
-  });
-
+      // retrieve languages.json from express
+    this.languagesService.getAllLanguages().subscribe(languages => {
+      this.languages = languages;  
+    });
   }
+
+  onLanguageSelect(language:string) {
+    this.selectedLanguage.emit(language);
+  }
+
 }

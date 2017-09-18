@@ -3,19 +3,19 @@
     <thead>
       <th>
         <tr>
-          <app-select-language-dropdown></app-select-language-dropdown>
+          <app-select-language-dropdown (selectedLanguage)="selectLanguage($event)"></app-select-language-dropdown>
         </tr>
       </th>
     </thead>
     <tbody>
       <tr>
         <td>
-          <input type="text" name="search" placeholder="Search word/phrase">
+          <input type="text" name="search" [value]="phrase" (input)="phrase = $event.target.value" placeholder="Search word/phrase">
           <button (click)="searchPhrase()">search</button>
         </td>
       </tr>
       <tr>
-        <td>Hi</td>
+        <td>{{searchedPhrase}}</td>
       </tr>
       <tr>
         <!-- display synonyms -->
@@ -28,4 +28,4 @@
   </table>
 </div>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.css"> -->
