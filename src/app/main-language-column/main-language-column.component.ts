@@ -9,7 +9,7 @@ import { SearchService } from '../search.service';
 export class MainLanguageColumnComponent implements OnInit {
 
   language = '';
-  phrase = '';
+  phrase = ''; // is this from service?
   searchedPhrase = '';
   // phrases: Array<phrase> = [];
   // @Input()
@@ -17,21 +17,21 @@ export class MainLanguageColumnComponent implements OnInit {
   
   constructor(private searchService: SearchService) { } 
   
-  ngOnInit() {
-      
-  }
+  ngOnInit() { }
 
   selectLanguage(language) {
     this.language = language;
   }
 
   searchPhrase(){
+    console.log('phrase here');
     console.log(this.phrase);
     var obj = {language: this.language, phrase: this.phrase};
     
     this.searchService.searchPhrase(obj).subscribe(phrase => {
       this.searchedPhrase = phrase.json().properties.phrase;
-      
+      // console.log('searched phrase here');
+      // console.log(this.searchedPhrase);
     })
   }
 }
