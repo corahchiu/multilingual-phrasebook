@@ -1,5 +1,5 @@
-import { Component, OnInit, NgModule } from '@angular/core';
-import { SelectLanguageDropdownComponent } from '../select-language-dropdown/select-language-dropdown.component';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SearchService } from '../search.service'; // tue
 
 @Component({
   selector: 'app-target-language-column',
@@ -7,15 +7,11 @@ import { SelectLanguageDropdownComponent } from '../select-language-dropdown/sel
   styleUrls: ['./target-language-column.component.css']
 })
 
-@NgModule({
-  declarations: [SelectLanguageDropdownComponent]
-})
-
 export class TargetLanguageColumnComponent implements OnInit {
 
   targetLanguageColumns: Array<TargetLanguageColumn> = [];
   
-  constructor() {
+  constructor(private searchService: SearchService) {
     this.targetLanguageColumns.push(new TargetLanguageColumn());
     this.targetLanguageColumns.push(new TargetLanguageColumn());
   }
@@ -48,8 +44,30 @@ export class TargetLanguageColumnComponent implements OnInit {
      }
   }
 
-  search(): void {
-    // todo
+  // wed
+  @Output()
+  selectedLanguage: EventEmitter<string> = new EventEmitter<string>();
+
+  //tue
+  targetLanguage = '';   
+  targetPhrases = []; // wed
+
+  selectLanguage(language) {
+    this.targetLanguage = language;
+    this.selectedLanguage.emit(this.targetLanguage); //wed
+  }
+  
+  //tue - how to connect this to the event in main, coz it's not in target html
+  searchPhrase(){
+    var obj = {targetLanguage: this.targetLanguage};
+    console.log('target language obj here');
+    console.log(obj);
+
+    //wed
+    this.searchService.searchPhrase(obj).subscribe(phrases => {
+      var phrasesObj = phrases.json();
+      this.targetPhrases = Object.values(phrasesObj)[1]; // result: array of translated phrases
+    });
   }
 
 }

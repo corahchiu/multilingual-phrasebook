@@ -8,9 +8,10 @@ import { SearchService } from '../search.service';
 })
 export class MainLanguageColumnComponent implements OnInit {
 
-  language = '';
-  phrase = ''; // is this from service?
-  searchedPhrase = '';
+  language = ''; // is this sent to service?
+  phrase = ''; // is this sent to service?
+  phrasesObj = {};
+  mainPhrase = '';
   // phrases: Array<phrase> = [];
   // @Input()
   // searchedPhrase: EventEmitter<string> = new EventEmitter<string>();
@@ -24,14 +25,12 @@ export class MainLanguageColumnComponent implements OnInit {
   }
 
   searchPhrase(){
-    console.log('phrase here');
-    console.log(this.phrase);
+    // this obj is the request of values of the language and phrase being searched, and is sent to service
     var obj = {language: this.language, phrase: this.phrase};
-    
-    this.searchService.searchPhrase(obj).subscribe(phrase => {
-      this.searchedPhrase = phrase.json().properties.phrase;
-      // console.log('searched phrase here');
-      // console.log(this.searchedPhrase);
+    // this is the response from server then service
+    this.searchService.searchPhrase(obj).subscribe(phrases => {
+      var phrasesObj = phrases.json();
+      this.mainPhrase = Object.values(phrasesObj)[0]; // result: Szia
     })
   }
 }

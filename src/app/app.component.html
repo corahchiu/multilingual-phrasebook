@@ -26,5 +26,6 @@
 
 <div id=table>
   <app-main-language-column></app-main-language-column>
-  <app-target-language-column></app-target-language-column>
+  <!-- wed -->
+  <app-target-language-column (selectedLanguage)="selectLanguage($event)"></app-target-language-column>
 </div>

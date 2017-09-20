@@ -3,7 +3,8 @@
     <thead>
       <tr>
         <th *ngFor="let targetLanguageColumn of targetLanguageColumns">
-          <app-select-language-dropdown></app-select-language-dropdown>
+          <!-- tue -->
+          <app-select-language-dropdown (selectedLanguage)="selectLanguage($event)"></app-select-language-dropdown>
           <button (click)="moveColumnLeft(targetLanguageColumn)">left</button>
           <button (click)="moveColumnRight(targetLanguageColumn)">right</button>          
           <button (click)="removeColumn(targetLanguageColumn)">x</button></th>
@@ -11,8 +12,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <!-- display array of translated phrases -->
+      <!-- wed -->
+      <tr *ngFor = "let targetPhrase of targetPhrases">
+        <td>{{targetPhrase}}</td>
       </tr>
     </tbody>
   </table>

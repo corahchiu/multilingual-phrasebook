@@ -6,9 +6,9 @@ import 'rxjs/add/operator/map';
 export class SearchService {
 
   constructor(private http: Http) { }
-  
+// this obj is sent from component, same as the obj in searchPhrase() in component  
     searchPhrase(obj: object) {
-      console.log('obj here');
+      console.log('obj from service here');
       console.log(obj);
       return this.http.post('http://localhost:3000/search', obj)
     }
