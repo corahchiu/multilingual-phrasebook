@@ -15,8 +15,10 @@ export class AppComponent {
     // alert(this.selectedLanguage);
   }
 
+  //wed3 - 6. define phrases to send
+  targetPhrases = [];
   //wed3 - 2. define function
   sendTargetPhrases(phrases) {
-    alert('hi');
+    this.targetPhrases = phrases;
   }
 }

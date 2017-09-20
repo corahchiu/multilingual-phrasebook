@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SearchService } from '../search.service'; // tue
 
 @Component({
@@ -48,9 +48,13 @@ export class TargetLanguageColumnComponent implements OnInit {
   @Output()
   selectedLanguage: EventEmitter<string> = new EventEmitter<string>();
 
+  // wed3 - 8. name of object expected from app
+  @Input()
+  targetPhrases;
+
   //tue
   targetLanguage = '';   
-  targetPhrases = []; // wed*
+  // targetPhrases = []; // wed*
 
   // wed2 - 3. Emit targetLanguage to app on change in html. Change is 'selectedLanguage'
   selectLanguage(language) {
@@ -65,10 +69,10 @@ export class TargetLanguageColumnComponent implements OnInit {
     console.log(obj);
 
     //wed*
-    this.searchService.searchPhrase(obj).subscribe(phrases => {
-      var phrasesObj = phrases.json();
-      this.targetPhrases = Object.values(phrasesObj)[1]; // result: array of translated phrases
-    });
+  //   this.searchService.searchPhrase(obj).subscribe(phrases => {
+  //     var phrasesObj = phrases.json();
+  //     this.targetPhrases = Object.values(phrasesObj)[1]; // result: array of translated phrases
+  //   });
   }
 
 }
