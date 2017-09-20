@@ -44,17 +44,18 @@ export class TargetLanguageColumnComponent implements OnInit {
      }
   }
 
-  // wed
+  // wed2 - 2. Set up output event
   @Output()
   selectedLanguage: EventEmitter<string> = new EventEmitter<string>();
 
   //tue
   targetLanguage = '';   
-  targetPhrases = []; // wed
+  targetPhrases = []; // wed*
 
+  // wed2 - 3. Emit targetLanguage to app on change in html. Change is 'selectedLanguage'
   selectLanguage(language) {
     this.targetLanguage = language;
-    this.selectedLanguage.emit(this.targetLanguage); //wed
+    this.selectedLanguage.emit(this.targetLanguage);
   }
   
   //tue - how to connect this to the event in main, coz it's not in target html
@@ -63,7 +64,7 @@ export class TargetLanguageColumnComponent implements OnInit {
     console.log('target language obj here');
     console.log(obj);
 
-    //wed
+    //wed*
     this.searchService.searchPhrase(obj).subscribe(phrases => {
       var phrasesObj = phrases.json();
       this.targetPhrases = Object.values(phrasesObj)[1]; // result: array of translated phrases

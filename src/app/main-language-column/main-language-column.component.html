@@ -11,7 +11,8 @@
       <tr>
         <td>
           <input type="text" name="search" [value]="phrase" (input)="phrase = $event.target.value" placeholder="Search word/phrase">
-          <button (click)="searchPhrase()">search</button>
+          <!-- wed3 - 4. (put event into it)-->
+          <button (click)="searchPhrase($event)">search</button> 
         </td>
       </tr>
       <tr>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SearchService } from '../search.service';
 
 @Component({
@@ -12,10 +12,17 @@ export class MainLanguageColumnComponent implements OnInit {
   phrase = ''; // is this sent to service?
   phrasesObj = {};
   mainPhrase = '';
-  // phrases: Array<phrase> = [];
-  // @Input()
-  // searchedPhrase: EventEmitter<string> = new EventEmitter<string>();
+
+  // wed2 - 8. input selectedTargetLanguage from app.comp.ts
+  @Input()
+  selectedTargetLanguage;
   
+  // wed3 - 4.
+  targetPhrases = []; 
+  //wed3 - 3.
+  @Output()
+  onSendTargetPhrases = new EventEmitter();
+
   constructor(private searchService: SearchService) { } 
   
   ngOnInit() { }
@@ -24,13 +31,16 @@ export class MainLanguageColumnComponent implements OnInit {
     this.language = language;
   }
 
-  searchPhrase(){
-    // this obj is the request of values of the language and phrase being searched, and is sent to service
-    var obj = {language: this.language, phrase: this.phrase};
+  searchPhrase(event){
+    // this obj is the request of values of the languages and phrase being searched, and is sent to service
+    // wed2 - 9. set up obj to be sent to search.service
+    var obj = {language: this.language, phrase: this.phrase, targetLanguage: this.selectedTargetLanguage};
     // this is the response from server then service
     this.searchService.searchPhrase(obj).subscribe(phrases => {
       var phrasesObj = phrases.json();
-      this.mainPhrase = Object.values(phrasesObj)[0]; // result: Szia
+      this.mainPhrase = Object.values(phrasesObj)[0]; // result is phrase
+      this.targetPhrases = Object.values(phrasesObj)[1]; // result is an array
+      this.onSendTargetPhrases.emit(this.targetPhrases); // wed3 - 5.
     })
   }
 }

@@ -3,7 +3,7 @@
     <thead>
       <tr>
         <th *ngFor="let targetLanguageColumn of targetLanguageColumns">
-          <!-- tue -->
+          <!-- tue /(wed2: Send selectedLanguage value from target to app, then to main - 1.Get listened value from dropdown-->
           <app-select-language-dropdown (selectedLanguage)="selectLanguage($event)"></app-select-language-dropdown>
           <button (click)="moveColumnLeft(targetLanguageColumn)">left</button>
           <button (click)="moveColumnRight(targetLanguageColumn)">right</button>          
