@@ -15,10 +15,18 @@ export class AppComponent {
     // alert(this.selectedLanguage);
   }
 
-  //wed3 - 6. define phrases to send
-  targetPhrases = [];
-  //wed3 - 2. define function
-  sendTargetPhrases(phrases) {
-    this.targetPhrases = phrases;
-  }
+  //wed4 - 5. define obj to send
+  allPhrases = {};
+  // wed4 - 6. define function
+  sendAllPhrases(phrases){
+    this.allPhrases = phrases;
+  } 
+
+  // // don't delete:
+  // //wed3 - 6. define phrases to send
+  // targetPhrases = [];
+  // //wed3 - 2. define function
+  // sendTargetPhrases(phrases) {
+  //   this.targetPhrases = phrases;
+  // }
 }

@@ -7,15 +7,22 @@
           <app-select-language-dropdown (selectedLanguage)="selectLanguage($event)"></app-select-language-dropdown>
           <button (click)="moveColumnLeft(targetLanguageColumn)">left</button>
           <button (click)="moveColumnRight(targetLanguageColumn)">right</button>          
-          <button (click)="removeColumn(targetLanguageColumn)">x</button></th>
+          <button (click)="removeColumn(targetLanguageColumn)">x</button>
+          <!-- wed4 last step -->
+          <div *ngFor = "let targetPhrase of targetPhraseArr">
+          <!-- <div *ngFor ="let key of Object.key(allPhrases)"> -->
+              {{targetPhrase}}              
+          </div>
+        </th>
+          
         <th><button (click)="addNewColumn()" id="add">New column</button></th>
       </tr>
     </thead>
     <tbody>
-      <!-- wed -->
+      <!-- wed3
       <tr *ngFor = "let targetPhrase of targetPhrases">
         <td>{{targetPhrase}}</td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 </div>
