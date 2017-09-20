@@ -45,12 +45,15 @@ export class TargetLanguageColumnComponent implements OnInit {
   }
 
   // wed2 - 2. Set up output event
-  @Output()
-  selectedLanguage: EventEmitter<string> = new EventEmitter<string>();
+  // @Output() //xx
+  // selectedLanguage: EventEmitter<string> = new EventEmitter<string>(); //xx
 
   // wed4 - 9. name of object expected from app
   @Input()
   allPhrases; // allPhrases is an object of all equivalent phrases with their respect language as key
+
+  //wed5
+  targetPhrasesArr = [];
 
   // wed4 *important* 10. 
   // targetPhraseArr = [];
@@ -60,16 +63,19 @@ export class TargetLanguageColumnComponent implements OnInit {
   // targetPhrases; // this is an array of phrases specific to the target language
 
   //tue
-  targetLanguage = '';   
+  targetLanguage = ''; 
+    
 
   // wed2 - 3. Emit targetLanguage to app on change in html. Change is 'selectedLanguage'
   selectLanguage(language) {
     this.targetLanguage = language;
-    this.selectedLanguage.emit(this.targetLanguage);
+    // this.selectedLanguage.emit(this.targetLanguage);//xx
+    // wed5
+    this.targetPhrasesArr = this.allPhrases[this.targetLanguage];
     // // wed4 *important* 11.
     // this.targetPhraseArr = this.allPhrases[this.targetLanguage];
-    // console.log('targetPhraseArr here')
-    // console.log(this.targetPhraseArr);
+    // console.log('phrases here')
+    // console.log(this.targetPhrasesArr);
 
   }
 }
