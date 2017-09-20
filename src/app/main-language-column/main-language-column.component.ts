@@ -39,7 +39,7 @@ export class MainLanguageColumnComponent implements OnInit {
     this.searchService.searchPhrase(obj).subscribe(phrases => {
       var phrasesObj = phrases.json();
       this.mainPhrase = Object.values(phrasesObj)[0]; // result is phrase
-      this.targetPhrases = Object.values(phrasesObj)[1]; // result is an array
+      this.targetPhrases = Object.values(phrasesObj)[1]; // wed3 result is an array
       this.onSendTargetPhrases.emit(this.targetPhrases); // wed3 - 5.
     })
   }

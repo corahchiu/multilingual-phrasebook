@@ -61,19 +61,6 @@ export class TargetLanguageColumnComponent implements OnInit {
     this.targetLanguage = language;
     this.selectedLanguage.emit(this.targetLanguage);
   }
-  
-  //tue - how to connect this to the event in main, coz it's not in target html
-  searchPhrase(){
-    var obj = {targetLanguage: this.targetLanguage};
-    console.log('target language obj here');
-    console.log(obj);
-
-    //wed*
-  //   this.searchService.searchPhrase(obj).subscribe(phrases => {
-  //     var phrasesObj = phrases.json();
-  //     this.targetPhrases = Object.values(phrasesObj)[1]; // result: array of translated phrases
-  //   });
-  }
 
 }
 
