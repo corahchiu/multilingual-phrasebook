@@ -53,7 +53,7 @@ export class TargetLanguageColumnComponent implements OnInit {
   allPhrases; // allPhrases is an object of all equivalent phrases with their respect language as key
 
   // wed4 *important* 10. 
-  targetPhraseArr = [];
+  // targetPhraseArr = [];
 
   // wed3 - 8. name of object expected from app
   // @Input()
@@ -67,7 +67,7 @@ export class TargetLanguageColumnComponent implements OnInit {
     this.targetLanguage = language;
     this.selectedLanguage.emit(this.targetLanguage);
     // // wed4 *important* 11.
-    this.targetPhraseArr = this.allPhrases[this.targetLanguage];
+    // this.targetPhraseArr = this.allPhrases[this.targetLanguage];
     // console.log('targetPhraseArr here')
     // console.log(this.targetPhraseArr);
 

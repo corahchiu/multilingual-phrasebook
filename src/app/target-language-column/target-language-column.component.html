@@ -9,10 +9,12 @@
           <button (click)="moveColumnRight(targetLanguageColumn)">right</button>          
           <button (click)="removeColumn(targetLanguageColumn)">x</button>
           <!-- wed4 last step -->
-          <div *ngFor = "let targetPhrase of targetPhraseArr">
-          <!-- <div *ngFor ="let key of Object.key(allPhrases)"> -->
-              {{targetPhrase}}              
+          <div>
+            {{allPhrases[targetLanguage]}}
           </div>
+          <!-- <div *ngFor = "let targetPhrase of targetPhraseArr">
+              {{targetPhrase}}              
+          </div> -->
         </th>
           
         <th><button (click)="addNewColumn()" id="add">New column</button></th>
