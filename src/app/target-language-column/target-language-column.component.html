@@ -4,21 +4,14 @@
       <tr>
         <th *ngFor="let targetLanguageColumn of targetLanguageColumns">
           <!-- tue /(wed2: Send selectedLanguage value from target to app, then to main - 1.Get listened value from dropdown-->
-          <!-- <app-select-language-dropdown (selectedLanguage)="selectLanguage($event)"></app-select-language-dropdown> wed5 -->
+          <app-select-language-dropdown [targetLanguageColumn]="targetLanguageColumn"></app-select-language-dropdown>
           <button (click)="moveColumnLeft(targetLanguageColumn)">left</button>
           <button (click)="moveColumnRight(targetLanguageColumn)">right</button>          
           <button (click)="removeColumn(targetLanguageColumn)">x</button>
-          <!-- wed5 -->
-          <div>
-            <app-single-target-language-column [targetPhrasesArr]="targetPhrasesArr" (selectedLanguage)="selectLanguage($event)"></app-single-target-language-column>
-          </div>
           <!-- wed4 last step -->
-          <!-- <div>
-            {{allPhrases[targetLanguage]}}
-          </div> -->
-          <!-- <div *ngFor = "let targetPhrase of targetPhraseArr">
-              {{targetPhrase}}              
-          </div> -->
+          <div>
+            {{allPhrases[targetLanguageColumn.language]}}
+          </div>
         </th>
           
         <th><button (click)="addNewColumn()" id="add">New column</button></th>

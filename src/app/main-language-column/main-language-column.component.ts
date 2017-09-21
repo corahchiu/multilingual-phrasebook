@@ -39,7 +39,9 @@ export class MainLanguageColumnComponent implements OnInit {
   searchPhrase(event){
     // this obj is the request of values of the languages and phrase being searched, and is sent to service
     // wed2 - 9. set up obj to be sent to search.service
-    var obj = {language: this.language, phrase: this.phrase, targetLanguage: this.selectedTargetLanguage};
+    // var obj = {language: this.language, phrase: this.phrase, targetLanguage: this.selectedTargetLanguage};
+    var obj = {phrase: this.phrase};
+    
     // this is the response from server then service
     this.searchService.searchPhrase(obj).subscribe(phrases => {
       var object = phrases.json();

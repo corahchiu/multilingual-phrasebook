@@ -11,15 +11,13 @@ import { MainLanguageColumnComponent } from './main-language-column/main-languag
 
 import { LanguagesService } from './languages.service';
 import { SearchService } from './search.service';
-import { SingleTargetLanguageColumnComponent } from './single-target-language-column/single-target-language-column.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TargetLanguageColumnComponent,
     SelectLanguageDropdownComponent,
-    MainLanguageColumnComponent,
-    SingleTargetLanguageColumnComponent
+    MainLanguageColumnComponent
   ],
   imports: [
     BrowserModule,

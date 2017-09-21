@@ -20,7 +20,6 @@ export class AppComponent {
   // wed4 - 6. define function
   sendAllPhrases(phrases){
     this.allPhrases = phrases;
-    // console.log(this.allPhrases);
   } 
 
   // // don't delete:

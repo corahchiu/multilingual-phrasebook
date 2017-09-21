@@ -1,4 +1,4 @@
-<select (change)="onLanguageSelect($event.target.value)" data-placeholder="Choose a Language...">
+<select [(ngModel)]="targetLanguageColumn.language" data-placeholder="Choose a Language...">
     <option></option>        
     <option *ngFor="let language of languages" value="{{language}}">{{language}}</option>
 </select>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LanguagesService } from '../languages.service';
 
 @Component({
@@ -10,8 +10,8 @@ export class SelectLanguageDropdownComponent implements OnInit {
 
   languages: Array<any> = [];
 
-  @Output() 
-  selectedLanguage: EventEmitter<string> = new EventEmitter<string>();
+  @Input() 
+  targetLanguageColumn = {};
   
   constructor(private languagesService: LanguagesService) { }
   
@@ -22,8 +22,8 @@ export class SelectLanguageDropdownComponent implements OnInit {
     });
   }
 
-  onLanguageSelect(language:string) {
-    this.selectedLanguage.emit(language);
-  }
+  // onLanguageSelect(language:string) {
+  //   this.selectedLanguage.emit(language);
+  // }
 
 }
