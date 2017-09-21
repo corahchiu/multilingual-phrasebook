@@ -10,6 +10,9 @@ export class SelectLanguageDropdownComponent implements OnInit {
 
   languages: Array<any> = [];
 
+  @Output()
+  selectedLanguage: EventEmitter<string> = new EventEmitter<string>();
+  
   @Input() 
   targetLanguageColumn = {};
   
@@ -22,8 +25,8 @@ export class SelectLanguageDropdownComponent implements OnInit {
     });
   }
 
-  // onLanguageSelect(language:string) {
-  //   this.selectedLanguage.emit(language);
-  // }
+  onLanguageSelect(language:string) {
+    this.selectedLanguage.emit(language);
+  }
 
 }

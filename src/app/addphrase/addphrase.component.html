@@ -1,0 +1,14 @@
+<div class="component">
+  <div>
+    <app-select-language-dropdown (selectedLanguage)="selectLanguageOne($event)"></app-select-language-dropdown>
+    <app-select-language-dropdown (selectedLanguage)="selectLanguageTwo($event)"></app-select-language-dropdown>      
+  </div>
+
+  <div>
+    <input type="text" [value]="phraseOne" (input)="phraseOne = $event.target.value" placeholder="Phrase one">
+    <input type="text" [value]="phraseTwo" (input)="phraseTwo = $event.target.value" placeholder="Phrase two">    
+    <button (click)="submitPhrase($event)">Submit</button> 
+  </div>
+</div>
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.css"> -->

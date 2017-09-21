@@ -11,20 +11,24 @@ import { MainLanguageColumnComponent } from './main-language-column/main-languag
 
 import { LanguagesService } from './languages.service';
 import { SearchService } from './search.service';
+import { AddphraseComponent } from './addphrase/addphrase.component';
+import { AddphraseService } from './addphrase.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TargetLanguageColumnComponent,
     SelectLanguageDropdownComponent,
-    MainLanguageColumnComponent
+    MainLanguageColumnComponent,
+    AddphraseComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [LanguagesService, SearchService],
+  providers: [LanguagesService, SearchService, AddphraseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
