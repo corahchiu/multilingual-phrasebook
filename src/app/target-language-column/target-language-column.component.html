@@ -31,6 +31,7 @@
       </div>
         
         <div class="phrase-column col-lg-9">
+          <p [hidden]="allPhrases[targetLanguageColumn.language]">No phrase to show</p>
           {{allPhrases[targetLanguageColumn.language]}}
         </div>
       </div>
