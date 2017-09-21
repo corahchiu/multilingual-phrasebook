@@ -53,6 +53,8 @@ export class MainLanguageColumnComponent implements OnInit {
 
       // this.targetPhrases = Object.values(object)[1]; // don't delete. wed3 result is an array
       // this.onSendTargetPhrases.emit(this.targetPhrases); // don't delete. wed3 - 5.
+
+      this.phrase = '';
     })
   }
 }

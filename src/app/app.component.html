@@ -24,17 +24,24 @@
     </div><!-- /.navbar-collapse -->
   </nav>
 
-<div id=table>
-  <!-- wed2 - 6. from app.comp.ts, to enable the event to be sent to main-->
-  <!-- wed4 - 7. define event listener in (onSendAllPhrases) -->
-  <app-main-language-column [selectedTargetLanguage]="selectedTargetLanguage" (onSendAllPhrases)="sendAllPhrases($event)"></app-main-language-column>  
-  <!-- wed3 - Goal: send target phrase from main to target 1. define event to listen to in () -->
-  <!-- <app-main-language-column [selectedTargetLanguage]="selectedTargetLanguage" (onSendTargetPhrases)="sendTargetPhrases($event)"></app-main-language-column> -->
-  <!-- wed2 - 4. listens to the event from target -->
-  <!-- wed4 - 8. eneable even to be sent to target -->
-  <app-target-language-column (selectedLanguage)="selectLanguage($event)" [allPhrases]="allPhrases"></app-target-language-column>  
-  <!-- wed3 - 7. enable event to be sent to target -->
-  <!-- <app-target-language-column (selectedLanguage)="selectLanguage($event)" [targetPhrases]="targetPhrases"></app-target-language-column> -->
-</div>
 
+<div>
+  <div class="container">
+    <!-- wed2 - 6. from app.comp.ts, to enable the event to be sent to main-->
+    <!-- wed4 - 7. define event listener in (onSendAllPhrases) -->
+    <app-main-language-column [selectedTargetLanguage]="selectedTargetLanguage" (onSendAllPhrases)="sendAllPhrases($event)"></app-main-language-column>  
+    
+  </div>
+  <div class="container">
+    <!-- wed3 - Goal: send target phrase from main to target 1. define event to listen to in () -->
+    <!-- <app-main-language-column [selectedTargetLanguage]="selectedTargetLanguage" (onSendTargetPhrases)="sendTargetPhrases($event)"></app-main-language-column> -->
+    <!-- wed2 - 4. listens to the event from target -->
+    <!-- wed4 - 8. eneable even to be sent to target -->
+    <app-target-language-column (selectedLanguage)="selectLanguage($event)" [allPhrases]="allPhrases"></app-target-language-column>  
+    <!-- wed3 - 7. enable event to be sent to target -->
+    <!-- <app-target-language-column (selectedLanguage)="selectLanguage($event)" [targetPhrases]="targetPhrases"></app-target-language-column> -->
+  </div>
+</div>
+<div class="container">
 <app-addphrase></app-addphrase>
+</div>

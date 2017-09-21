@@ -1,3 +1,22 @@
+<div class="component"  class="container">
+  <div id="main-language-column">    
+    <div class="language-column col-lg-3">
+      <!-- <div> -->
+        <app-select-language-dropdown (selectedLanguage)="selectLanguage($event)"></app-select-language-dropdown>          
+      <!-- </div> -->
+      <div>
+        <input type="text" name="search" [value]="phrase" (input)="phrase = $event.target.value" placeholder="Search word/phrase">
+        <button (click)="searchPhrase($event)">search</button> 
+      </div>
+    </div>
+    <div class="phrase-column col-lg-7">
+      {{mainPhrase}}
+    </div>
+  </div>
+</div>
+  
+  
+<!-- 
 <div class="component">
   <table id="main-language-column">    
     <thead>
@@ -11,7 +30,7 @@
       <tr>
         <td>
           <input type="text" name="search" [value]="phrase" (input)="phrase = $event.target.value" placeholder="Search word/phrase">
-          <!-- wed3 - 4. (put event into it)-->
+           // wed3 - 4. (put event into it)
           <button (click)="searchPhrase($event)">search</button> 
         </td>
       </tr>
@@ -19,7 +38,7 @@
         <td>{{mainPhrase}}</td>
       </tr>
       <tr>
-        <!-- display synonyms -->
+        <!-- display synonyms
         <td *ngFor="let phrase of phrases">
           {{phrase.synonym}}
         </td>
@@ -28,5 +47,4 @@
     </tbody>
   </table>
 </div>
-
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.css"> -->
+ -->

@@ -1,14 +1,15 @@
 <div class="component">
+  <h3>Add phrases to the database</h3>
+  <form #userForm="ngForm" (ngSubmit)="submitPhrase()">
+      
   <div>
     <app-select-language-dropdown (selectedLanguage)="selectLanguageOne($event)"></app-select-language-dropdown>
-    <app-select-language-dropdown (selectedLanguage)="selectLanguageTwo($event)"></app-select-language-dropdown>      
+    <input type="text" name="phraseOne" [value]="phraseOne" (input)="phraseOne = $event.target.value" placeholder="Add phrase here">
   </div>
-
-  <form #userForm="ngForm" (ngSubmit)="submitPhrase()">
-    <input type="text" name="phraseOne" [value]="phraseOne" (input)="phraseOne = $event.target.value" placeholder="Phrase one">
-    <input type="text" name="phraseTwo" [value]="phraseTwo" (input)="phraseTwo = $event.target.value" placeholder="Phrase two">    
+  <div>
+    <app-select-language-dropdown (selectedLanguage)="selectLanguageTwo($event)"></app-select-language-dropdown>
+    <input type="text" name="phraseTwo" [value]="phraseTwo" (input)="phraseTwo = $event.target.value" placeholder="Add phrase here">    
+  </div>
     <input type='submit' value="Submit" class="btn btn-primary" /> 
   </form>  
 </div>
-
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.css"> -->
