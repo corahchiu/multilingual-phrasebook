@@ -19,19 +19,19 @@
 <div class="component" class="container">
   <!-- <div id="target-language-column" class="container">     -->
     <div *ngFor="let targetLanguageColumn of targetLanguageColumns" class="container">
-      <div class="language-column col-lg-3">
+      <div class="language-column col-lg-3 col-md-3 col-sm-3 col-xs-3">
           <!-- <div> -->
               <app-select-language-dropdown [targetLanguageColumn]="targetLanguageColumn"></app-select-language-dropdown>
             <!-- </div> -->
             <div>
-              <button (click)="moveColumnLeft(targetLanguageColumn)">up</button>
-              <button (click)="moveColumnRight(targetLanguageColumn)">down</button>          
-              <button (click)="removeColumn(targetLanguageColumn)">x</button>
+              <button (click)="moveColumnLeft(targetLanguageColumn)" class="btn btn-xs btn-info"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+              <button (click)="moveColumnRight(targetLanguageColumn)" class="btn btn-xs btn-info"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>          
+              <button (click)="removeColumn(targetLanguageColumn)" class="btn btn-xs btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
       </div>
         
-        <div class="phrase-column col-lg-9">
-          <p [hidden]="allPhrases[targetLanguageColumn.language]">No phrase to show</p>
+        <div class="phrase-column col-lg-9 col-md-9 col-sm-9 col-xs-9">
+          <p [hidden]="allPhrases[targetLanguageColumn.language]"><i class="fa fa-question-circle-o" aria-hidden="true"></i> No phrase to show</p>
           {{allPhrases[targetLanguageColumn.language]}}
         </div>
       </div>
@@ -39,7 +39,7 @@
       
     <div>
       
-        <button (click)="addNewColumn()" id="add">New column</button>
+        <button (click)="addNewColumn()" class="btn btn-sm btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></button>
     </div>
   </div>
 
