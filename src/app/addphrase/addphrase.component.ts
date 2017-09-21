@@ -27,7 +27,7 @@ export class AddphraseComponent implements OnInit {
   selectLanguageTwo(language){
     this.languageTwo = language;
   }
-  submitPhrase () {
+  submitPhrase(form) {
     var obj = {languageOne: this.languageOne, phraseOne: this.phraseOne, languageTwo: this.languageTwo, phraseTwo: this.phraseTwo};
 
     this.addphraseService.addPhrase(obj).subscribe(phrases => {
@@ -35,6 +35,11 @@ export class AddphraseComponent implements OnInit {
     })
     console.log('obj from component');
     console.log(obj);
+    
+    this.languageOne = '';
+    this.phraseOne = '';
+    this.languageTwo = '';
+    this.phraseTwo = '';
   }
 }
 
