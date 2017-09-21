@@ -1,0 +1,21 @@
+#target-language-column{
+    min-height: 1000px;
+    border: 1px solid rgba(89, 87, 87, 0.5);    
+}
+.language-column{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid rgba(89, 87, 87, 0.43);
+    
+}
+
+.phrase-column{
+    display: inline;
+    padding: 20px;
+    
+}
+
+#add-btn{
+    padding: 8px 15px 0px 15px;
+}
