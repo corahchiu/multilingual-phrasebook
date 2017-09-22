@@ -32,44 +32,40 @@
 </div>
 
 <div id="entire-section">
-  <div class="second-section">
-    <div class="look-up-phrases col-lg-7 col-md-7 col-sm-7 col-xs-7">
-      <div class="container">
-        <!-- wed2 - 6. from app.comp.ts, to enable the event to be sent to main-->
-        <!-- wed4 - 7. define event listener in (onSendAllPhrases) -->
-        <app-main-language-column [selectedTargetLanguage]="selectedTargetLanguage" (onSendAllPhrases)="sendAllPhrases($event)"></app-main-language-column>  
-        
-      </div>
-      <div>
-        <!-- wed3 - Goal: send target phrase from main to target 1. define event to listen to in () -->
-        <!-- <app-main-language-column [selectedTargetLanguage]="selectedTargetLanguage" (onSendTargetPhrases)="sendTargetPhrases($event)"></app-main-language-column> -->
-        <!-- wed2 - 4. listens to the event from target -->
-        <!-- wed4 - 8. eneable even to be sent to target -->
-        <app-target-language-column (selectedLanguage)="selectLanguage($event)" [allPhrases]="allPhrases"></app-target-language-column>  
-        <!-- wed3 - 7. enable event to be sent to target -->
-        <!-- <app-target-language-column (selectedLanguage)="selectLanguage($event)" [targetPhrases]="targetPhrases"></app-target-language-column> -->
-      </div>
+  <!-- <div class="second-section"> -->
+  <div class="look-up-phrases col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <div class="container">
+      <!-- wed2 - 6. from app.comp.ts, to enable the event to be sent to main-->
+      <!-- wed4 - 7. define event listener in (onSendAllPhrases) -->
+      <app-main-language-column [selectedTargetLanguage]="selectedTargetLanguage" (onSendAllPhrases)="sendAllPhrases($event)"></app-main-language-column>  
+      
     </div>
-
-    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" id="about">
-      <p>About</p>
-      <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-      </ul>
-      <p>How to use:</p>
-      <ol>
-        <li>Search</li>
-        <li>Learn</li>
-        <li>Add</li>
-      </ol>
+    <div>
+      <!-- wed3 - Goal: send target phrase from main to target 1. define event to listen to in () -->
+      <!-- <app-main-language-column [selectedTargetLanguage]="selectedTargetLanguage" (onSendTargetPhrases)="sendTargetPhrases($event)"></app-main-language-column> -->
+      <!-- wed2 - 4. listens to the event from target -->
+      <!-- wed4 - 8. eneable even to be sent to target -->
+      <app-target-language-column (selectedLanguage)="selectLanguage($event)" [allPhrases]="allPhrases"></app-target-language-column>  
+      <!-- wed3 - 7. enable event to be sent to target -->
+      <!-- <app-target-language-column (selectedLanguage)="selectLanguage($event)" [targetPhrases]="targetPhrases"></app-target-language-column> -->
     </div>
   </div>
 
-
-
-  <div class="third-section container">
-  <app-addphrase></app-addphrase>
+    
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="about">
+    <div>
+      <p>How to use:</p>
+      <p>1. To search a phrase, select its language and input the phrase in the main table.</p>
+      <p>2. Select your target languages in the tables below.</p>
+      <!-- <ol>
+        <li>Search</li>
+        <li>Learn</li>
+        <li>Add</li>
+      </ol> -->
+    </div>
+    
+    <div class="third-section container">
+      <app-addphrase></app-addphrase>
+    </div>
   </div>
 </div>

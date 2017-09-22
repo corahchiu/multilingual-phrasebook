@@ -55,6 +55,9 @@ export class MainLanguageColumnComponent implements OnInit {
       // this.onSendTargetPhrases.emit(this.targetPhrases); // don't delete. wed3 - 5.
 
       this.phrase = '';
-    })
+    }, (err) => console.log(err))
+    
+
+    
   }
 }

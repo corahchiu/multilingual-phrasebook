@@ -17,11 +17,12 @@ export class TargetLanguageColumnComponent implements OnInit  {
   }
 
   ngOnInit() {
-
   }
 
   addNewColumn(): void {
     this.targetLanguageColumns.push(new TargetLanguageColumn(''));
+    console.log(this.allPhrases);
+    
   }
 
   removeColumn(column): void {
@@ -54,6 +55,15 @@ export class TargetLanguageColumnComponent implements OnInit  {
   @Input()
   allPhrases; // allPhrases is an object of all equivalent phrases with their respect language as key
   
+
+  showHide(){
+    if (Object.keys(this.allPhrases).length == 0){
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
   // wed4 *important* 10. 
   // targetPhraseArr = [];
 
