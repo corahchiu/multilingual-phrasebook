@@ -2,11 +2,13 @@
   <h3>Add phrases to the database</h3>
   <form #userForm="ngForm" (ngSubmit)="submitPhrase()">
       
-  <div>
+  <div class="phrase-box">
+    <p>Phrase 1</p>
     <app-select-language-dropdown (selectedLanguage)="selectLanguageOne($event)"></app-select-language-dropdown>
     <input type="text" name="phraseOne" [value]="phraseOne" (input)="phraseOne = $event.target.value" placeholder="Add phrase here">
   </div>
-  <div>
+  <div class="phrase-box">
+    <p>Phrase 2</p>
     <app-select-language-dropdown (selectedLanguage)="selectLanguageTwo($event)"></app-select-language-dropdown>
     <input type="text" name="phraseTwo" [value]="phraseTwo" (input)="phraseTwo = $event.target.value" placeholder="Add phrase here">    
   </div>

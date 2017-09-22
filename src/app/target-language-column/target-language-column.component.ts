@@ -64,6 +64,7 @@ export class TargetLanguageColumnComponent implements OnInit  {
       return true;
     }
   }
+
   // wed4 *important* 10. 
   // targetPhraseArr = [];
 

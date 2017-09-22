@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+html, body{
+    font-family: Quicksand;
+    background-color: rgba(251, 241, 253, 0.5);
+}

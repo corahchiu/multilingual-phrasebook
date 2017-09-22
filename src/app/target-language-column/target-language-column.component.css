@@ -1,19 +1,23 @@
-#target-language-column{
+/* #target-language-column{
     min-height: 1000px;
     border: 1px solid rgba(89, 87, 87, 0.5);    
-}
+} */
 .language-column{
     display: flex;
     flex-direction: column;
     padding: 20px;
-    border: 1px solid rgba(89, 87, 87, 0.43);
+    border: 1px solid rgba(63, 39, 155, 0.43);
+    height: 100px;
     
 }
 
 .phrase-column{
-    display: inline;
-    padding: 20px;
+    border: 1px solid rgba(63, 39, 155, 0.43);
     
+    padding: 20px;
+    height: 100px;
+    width: 230px;
+
 }
 
 #add-btn{
